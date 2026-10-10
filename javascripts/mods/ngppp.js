@@ -4544,7 +4544,10 @@ function updateAutoGhosts(load) {
 		document.getElementById("autoGhost13u").value=player.ghostify.automatorGhosts[13].u
 		document.getElementById("autoGhost15a").value=formatValue("Scientific", player.ghostify.automatorGhosts[15].a, 2, 1)
 		document.getElementById("autoGhost26t").value=player.ghostify.automatorGhosts[26]["t"]?player.ghostify.automatorGhosts[26]["t"]:1
-		document.getElementById("hyperonTarget").textContent = getFullExpansion(player.ghostify.baryons.hyperons.target)
+		document.getElementById("hyperonTarget").textContent = player.ghostify?.baryons?.hyperons?.target 
+    ? getFullExpansion(player.ghostify.baryons.hyperons.target) 
+    : "Locked";
+
 	}
 	document.getElementById("consumedPower").textContent=powerConsumed.toFixed(1)
 	isAutoGhostsSafe=player.ghostify.automatorGhosts.power>=powerConsumed
